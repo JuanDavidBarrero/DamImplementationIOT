@@ -1,0 +1,50 @@
+.device-card {
+    ion-card {
+      width: 300px; /* Ancho fijo de la tarjeta */
+      margin: 10px auto; /* Centra la tarjeta */
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      padding: 10px;
+      background-color: #f0f0f0; /* Fondo gris */
+    }
+  
+    ion-card-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 10px;
+    }
+  
+    .device-icon {
+      font-size: 40px;
+      color: #0d6efd; /* Azul moderno */
+    }
+  
+    ion-card-title {
+      font-size: 18px;
+      font-weight: bold;
+      color: #333; /* Cambié el color del título a un gris oscuro */
+    }
+  
+    .device-values {
+      margin-top: 10px;
+  
+      div {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 8px;
+      }
+  
+      .label {
+        font-weight: bold;
+        color: #555; /* Color gris más oscuro para la etiqueta */
+      }
+  
+      .value {
+        font-size: 16px;
+        color: #000; /* Color negro para los valores */
+      }
+    }
+  }
+  

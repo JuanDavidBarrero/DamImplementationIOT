@@ -1,0 +1,74 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title class="app-title">
+      <ion-icon name="school-outline" class="icon"></ion-icon>
+      FIUBA
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large" class="app-title">
+        <ion-icon name="school-outline" class="icon"></ion-icon>
+        FIUBA
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content [fullscreen]="true">
+    <div class="content">
+
+      <app-add-sensor></app-add-sensor>
+  
+      <div class="device-cards-grid">
+        <app-device-card
+            [id]="'device1'"  
+            [icon]="'thermometer-outline'"
+            [text]="'Temperatura'"
+            [currentValue]="'25°C'"
+            [previousValue]="'22°C'"
+            [location]="'Zona Jardín'"
+            (cardClicked)="onDeviceCardClick($event)">
+        </app-device-card>
+
+        <app-device-card
+        [id]="'device3'"  
+        [icon]="'thermometer-outline'"
+        [text]="'Temperatura'"
+        [currentValue]="'25°C'"
+        [previousValue]="'22°C'"
+        [location]="'Zona oeste'"
+        (cardClicked)="onDeviceCardClick($event)">
+    </app-device-card>
+      
+        <app-device-card
+            [id]="'device2'"  
+            [icon]="'water'"
+            [text]="'Humedad'"
+            [currentValue]="'60%'"
+            [previousValue]="'55%'"
+            [location]="'Zona Este'"
+            (cardClicked)="onDeviceCardClick($event)">
+        </app-device-card>
+      
+        <!-- Aquí puedes agregar más tarjetas si es necesario -->
+      </div>
+      
+    </div>
+  </ion-content>
+  
+
+<ion-footer>
+  <ion-toolbar>
+    <div class="footer-content">
+      <ion-icon name="logo-twitter" class="social-icon"></ion-icon>
+      <ion-icon name="logo-facebook" class="social-icon"></ion-icon>
+      <ion-icon name="logo-youtube" class="social-icon"></ion-icon>
+    </div>
+    <div class="footer-text">
+      Made by Juan David Barrero
+    </div>
+  </ion-toolbar>
+</ion-footer>

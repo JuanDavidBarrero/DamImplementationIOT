@@ -1,0 +1,24 @@
+<div class="device-card" (click)="onCardClick()">
+  <ion-card>
+    <ion-card-header>
+      <ion-icon [name]="icon" class="device-icon"></ion-icon>
+      <ion-card-title>{{ text }}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <div class="device-values">
+        <div>
+          <span class="label">Valor Actual:</span>
+          <span class="value">{{ currentValue }}</span>
+        </div>
+        <div>
+          <span class="label">Valor Pasado:</span>
+          <span class="value">{{ previousValue }}</span>
+        </div>
+        <div>
+          <span class="label">Zona:</span>
+          <span class="value">{{ location }}</span>
+        </div>
+      </div>
+    </ion-card-content>
+  </ion-card>
+</div>

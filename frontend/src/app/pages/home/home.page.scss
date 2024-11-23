@@ -1,0 +1,63 @@
+/* App Bar */
+.app-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    font-weight: bold;
+    color: #0d6efd; /* Color azul moderno */
+  }
+  
+  .icon {
+    margin-right: 8px;
+    font-size: 24px;
+    color: #0d6efd; /* Color del ícono */
+  }
+  
+/* Footer */
+.footer-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 10px 0;
+  }
+  
+  .social-icon {
+    font-size: 24px;
+    color: #666; /* Color inicial de los íconos */
+    transition: color 0.3s ease-in-out;
+  }
+  
+  .social-icon:hover {
+    color: #0d6efd; /* Azul moderno al pasar el mouse */
+  }
+  
+  .footer-text {
+    text-align: center;
+    font-size: 12px;
+    margin-top: 5px;
+    color: #888; /* Gris claro para el texto */
+    font-style: italic; /* Opcional: estilo en cursiva */
+  }
+
+  .device-cards-grid {
+    display: grid; /* Establece el contenedor como un grid */
+    grid-template-columns: repeat(3, 1fr); /* 3 columnas de igual tamaño */
+    gap: 16px; /* Espacio entre las tarjetas */
+    padding: 16px; /* Espaciado interior */
+  }
+  
+  @media (max-width: 768px) {
+    .device-cards-grid {
+      grid-template-columns: repeat(2, 1fr); /* 2 columnas en pantallas más pequeñas */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .device-cards-grid {
+      grid-template-columns: 1fr; /* 1 columna en pantallas muy pequeñas */
+    }
+  }
+  
+  

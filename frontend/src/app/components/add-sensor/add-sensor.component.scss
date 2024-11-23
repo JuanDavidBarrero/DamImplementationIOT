@@ -1,0 +1,53 @@
+ion-card {
+    width: 70%;
+    height: 400px; /* Puedes ajustar la altura según sea necesario */
+    margin: 0 auto; /* Centra el card */
+    border-radius: 15px; /* Bordes redondeados */
+    padding: 20px;
+  
+    ion-card-header {
+      margin-bottom: 20px;
+    }
+  
+    ion-item {
+      margin-bottom: 15px; /* Separación entre los elementos */
+    }
+  
+    ion-button {
+      margin-top: 20px;
+      border-radius: 10px; /* Bordes redondeados en el botón */
+      padding: 10px 20px; /* Opcional: puedes ajustar el tamaño del botón */
+    }
+    
+    ion-label {
+      font-weight: bold;
+    }
+  
+    ion-select {
+      width: 100%;
+    }
+  
+    ion-input {
+      width: 100%;
+    }
+
+  
+  }
+  
+
+ 
+::ng-deep .custom-alert {
+    color: white !important;         
+    border-radius: 15px !important;  
+    padding: 20px !important;       
+  }
+  
+  /* Estilo de los botones */
+  ::ng-deep .custom-alert .alert-button {
+    background-color: #ff5722 !important;  
+    color: white !important;               
+    border-radius: 10px !important;       
+    font-weight: bold !important;         
+    padding: 10px 20px !important;        
+  }
+  
