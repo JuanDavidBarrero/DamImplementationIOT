@@ -9,6 +9,7 @@ import { HomePageRoutingModule } from './home-routing.module';
 import { HomePage } from './home.page';
 import { DeviceCardComponent } from 'src/app/components/device-card/device-card.component';
 import {  AddSensorComponent } from 'src/app/components/add-sensor/add-sensor.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import {  AddSensorComponent } from 'src/app/components/add-sensor/add-sensor.co
     CommonModule,
     FormsModule,
     IonicModule,
-    HomePageRoutingModule
+    HomePageRoutingModule,
+    HttpClientModule
   ],
   declarations: [HomePage,DeviceCardComponent,AddSensorComponent]
 })

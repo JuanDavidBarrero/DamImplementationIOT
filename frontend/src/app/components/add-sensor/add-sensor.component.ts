@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { AlertController } from '@ionic/angular';  // Reemplaza ToastController por AlertController
+import { AlertController } from '@ionic/angular';  
+import { DeviceService } from 'src/app/services/device.service';
+import {  PostData } from 'src/app/interfaces/devices'; 
+
 
 @Component({
   selector: 'app-add-sensor',
@@ -11,7 +14,7 @@ export class AddSensorComponent implements OnInit {
   name: string = '';
   selectedZone: string = '';
 
-  constructor(private alertController: AlertController) { }  // Usa AlertController
+  constructor(private alertController: AlertController, private deviceService: DeviceService ) { }  
 
   ngOnInit() {}
 
@@ -19,19 +22,33 @@ export class AddSensorComponent implements OnInit {
     if (this.name && this.selectedZone) {
       console.log('Nombre:', this.name);
       console.log('Zona seleccionada:', this.selectedZone);
+
+      const newDevice: PostData = {
+        deviceName: this.name,
+        location: this.selectedZone
+      };
+
+      try {
+         await this.deviceService.createDevice(newDevice);
+      } catch (error) {
+        console.log("error in the http response");
+        
+      }
+
+
     } else {
-      // Mostrar mensaje de error
+      
       this.showAlert('Formulario inválido: Nombre o Zona vacíos');
     }
   }
 
-  // Método para mostrar el alert
+  
   async showAlert(message: string) {
     const alert = await this.alertController.create({
-      header: 'Advertencia',  // Título del alert
-      message: message,       // El mensaje que pasas a la función
-      buttons: ['OK'],        // Botón para cerrar el alert
-      cssClass: 'custom-alert', // Clase personalizada para estilo (opcional)
+      header: 'Advertencia',  
+      message: message,       
+      buttons: ['OK'],        
+      cssClass: 'custom-alert', 
     });
 
     await alert.present();
