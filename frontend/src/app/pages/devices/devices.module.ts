@@ -7,6 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { DevicesPageRoutingModule } from './devices-routing.module';
 
 import { DevicesPage } from './devices.page';
+import { DeviceService } from 'src/app/services/device.service';
 
 @NgModule({
   imports: [
@@ -15,6 +16,7 @@ import { DevicesPage } from './devices.page';
     IonicModule,
     DevicesPageRoutingModule
   ],
-  declarations: [DevicesPage]
+  declarations: [DevicesPage],
+  providers: [DeviceService]  
 })
 export class DevicesPageModule {}

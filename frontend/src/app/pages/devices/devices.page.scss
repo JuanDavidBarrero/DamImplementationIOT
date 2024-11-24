@@ -1,0 +1,121 @@
+/* Contenedor principal para la página */
+.page-container {
+    display: flex;
+    justify-content: center; /* Centrado horizontal */
+    align-items: center; /* Centrado vertical */
+    height: 80vh; /* Asegura que el contenedor ocupe toda la altura de la pantalla */
+  }
+  
+  /* Tarjeta del dispositivo */
+  .device-card {
+    margin: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;  /* Fondo claro solo en la tarjeta */
+    max-width: 400px; /* Ajusta el tamaño máximo de la tarjeta */
+    width: 100%; /* Hace que la tarjeta ocupe el 100% del contenedor hasta el límite de max-width */
+  }
+  
+  /* Estilos del header de la tarjeta */
+  .device-card ion-card-header {
+    background-color: #3880ff;
+    color: white;
+    border-radius: 12px 12px 0 0;
+    padding: 16px;
+  }
+  
+  /* Titulo de la tarjeta */
+  .device-card ion-card-title {
+    font-size: 1.6rem;
+    font-weight: bold;
+    text-align: center;
+  }
+  
+  /* Contenido de la tarjeta */
+  .device-card ion-card-content {
+    padding: 16px;
+  }
+  
+  /* Información dentro de la tarjeta */
+  .card-info {
+    margin: 12px 0;
+    font-size: 1.1rem;
+    color: #333;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  /* Estilos del botón Data */
+  .ion-button {
+    margin-top: 20px;
+    --background: #3880ff;  /* Fondo del botón */
+    --color: white !important;  /* Color del texto del botón */
+    --border-radius: 8px;
+    --padding-start: 16px;
+    --padding-end: 16px;
+  }
+  
+  /* Centrado del texto "Data" */
+  .ion-text-center {
+    text-align: center;
+    color: white;  /* Asegura que el texto dentro del contenedor esté blanco */
+  }
+  
+  /* Estilos personalizados para el botón Data */
+  .custom-button {
+    margin-top: 20px;
+    --background: #3880ff;  /* Fondo del botón */
+    --color: white !important;  /* Color del texto del botón */
+    --border-radius: 8px;
+    --padding-start: 16px;
+    --padding-end: 16px;
+  }
+  
+  /* Títulos y textos generales */
+  h2 {
+    font-size: 1.4rem;
+    color: #3880ff;
+    font-weight: bold;
+    margin: 20px 0;
+  }
+  
+  /* Estilos para la sección del "Estado" */
+  .card-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.2rem;
+    margin: 10px 0;
+  }
+  
+  .card-info ion-label {
+    font-weight: bold; /* Negrita para "Estado" */
+    margin-right: 12px;
+  }
+  
+  .card-info span {
+    font-weight: bold;
+    color: #555;
+  }
+  
+  /* Personalización de ion-toggle usando ::part */
+  ion-toggle::part(knob) {
+    background-color: #fff !important;  /* Color del control deslizante */
+    border-color: #222 !important;  /* Borde del control deslizante */
+  }
+  
+  ion-toggle::part(track) {
+    background-color: #555 !important;  /* Color de fondo cuando está OFF */
+  }
+  
+  ion-toggle::part(checked-track) {
+    background-color: #333 !important;  /* Color de fondo cuando está ON */
+  }
+  
+  /* Opcionalmente, cambiar el color del texto en el toggle */
+  .card-info ion-toggle + span {
+    font-weight: bold;
+    color: #555; /* Cambiar el color del texto */
+  }
+  

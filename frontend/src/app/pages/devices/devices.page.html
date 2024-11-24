@@ -1,13 +1,14 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>devices</ion-title>
+    <ion-title>Devices</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
+  <!-- Header para dispositivo -->
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">devices</ion-title>
+      <ion-title size="large">Devices</ion-title>
     </ion-toolbar>
   </ion-header>
 
@@ -15,4 +16,49 @@
   <div class="ion-padding">
     <h2>ID recibido: {{ id }}</h2>
   </div>
+
+  <div class="page-container">
+    <!-- Card con detalles del dispositivo -->
+    <ion-card class="device-card">
+      <!-- Card Header -->
+      <ion-card-header class="ion-text-center">
+        <ion-card-title>Dispositivo {{ id }}</ion-card-title>
+      </ion-card-header>
+
+      <!-- Card Content -->
+      <ion-card-content>
+        <!-- Nombre -->
+        <div class="card-info">
+          <strong>Nombre:</strong> {{ deviceName }}
+        </div>
+
+        <!-- Fecha -->
+        <div class="card-info">
+          <strong>Fecha:</strong> {{ date | date: 'short' }}
+        </div>
+
+        <!-- Unidad de lectura -->
+        <div class="card-info">
+          <strong>Lectura:</strong> {{ readingValue }}%
+        </div>
+
+        <!-- Ubicación -->
+        <div class="card-info">
+          <strong>Ubicación:</strong> {{ location }}
+        </div>
+
+        <!-- Switch ON/OFF -->
+        <div class="card-info">
+          <ion-label>Estado</ion-label>
+          <ion-toggle [(ngModel)]="isOn" color="primary"></ion-toggle>
+          <span>{{ isOn ? 'ON' : 'OFF' }}</span>
+        </div>
+
+        <!-- Button "Data" -->
+        <div class="ion-text-center">
+          <ion-button expand="full" class="custom-button" (click)="showData()">Data</ion-button>
+        </div>
+      </ion-card-content>
+    </ion-card>
+  </div>  
 </ion-content>
