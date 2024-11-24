@@ -14,7 +14,7 @@ import { DeviceService } from 'src/app/services/device.service';
     CommonModule,
     FormsModule,
     IonicModule,
-    DevicesPageRoutingModule
+    DevicesPageRoutingModule,
   ],
   declarations: [DevicesPage],
   providers: [DeviceService]  

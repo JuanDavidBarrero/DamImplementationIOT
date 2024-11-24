@@ -50,9 +50,10 @@
         <!-- Switch ON/OFF -->
         <div class="card-info">
           <ion-label>Estado</ion-label>
-          <ion-toggle [(ngModel)]="isOn" color="primary"></ion-toggle>
+          <ion-toggle [(ngModel)]="isOn" color="primary" (ionChange)="onToggleChange()"></ion-toggle>
           <span>{{ isOn ? 'ON' : 'OFF' }}</span>
         </div>
+        
 
         <!-- Button "Data" -->
         <div class="ion-text-center">

@@ -26,7 +26,7 @@ export class DeviceService {
     }
   }
 
-  async changeDeviceState(id: number, state: string): Promise<any> {
+  async changeDeviceState(id: string, state: string): Promise<any> {
     try {
       const body = { state };  // Enviar el estado en el cuerpo de la solicitud
       const response = await firstValueFrom(this.http.post<any>(`${this.apiUrl}/${id}`, body));
