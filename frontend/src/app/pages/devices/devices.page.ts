@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';  
+import { ActivatedRoute, Router } from '@angular/router';  
 import { DeviceService } from 'src/app/services/device.service';
 import { ToastController } from '@ionic/angular';  
 
@@ -20,7 +20,8 @@ export class DevicesPage implements OnInit {
   constructor(
     private route: ActivatedRoute, 
     private deviceService: DeviceService,
-    private toastController: ToastController
+    private toastController: ToastController,
+    private router: Router
   ) { }
 
   ngOnInit() {
@@ -47,12 +48,9 @@ export class DevicesPage implements OnInit {
   }
 
   showData() {
-    console.log('Mostrar datos del dispositivo', {
-      deviceName: this.deviceName,
-      date: this.date,
-      readingValue: this.readingValue,
-      location: this.location
-    });
+    if (this.id) {
+      this.router.navigate([`/data/${this.id}`]);
+    }
   }
 
   async onToggleChange() {

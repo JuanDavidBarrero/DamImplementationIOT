@@ -15,6 +15,11 @@ const routes: Routes = [
     path: 'devices/:id',
     loadChildren: () => import('./pages/devices/devices.module').then(m => m.DevicesPageModule),
   },
+  {
+    path: 'data/:id',
+    loadChildren: () => import('./pages/data/data.module').then( m => m.DataPageModule)
+  },
+
 ];
 
 @NgModule({

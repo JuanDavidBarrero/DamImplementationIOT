@@ -1,0 +1,84 @@
+:host {
+    --ion-background-color: #121212; /* Fondo oscuro para la página */
+    --ion-text-color: #ffffff; /* Texto blanco */
+  }
+  
+  ion-header {
+    --background: #1e1e1e; /* Fondo oscuro para el encabezado */
+    color: #ffffff; /* Texto blanco */
+    padding-bottom: 10px;
+  }
+  
+  ion-toolbar {
+    --background: #333333; /* Fondo del toolbar */
+    color: white; /* Texto blanco */
+  }
+  
+  ion-title {
+    font-size: 1.6rem;
+    font-weight: bold;
+  }
+  
+  ion-content {
+    background-color: #121212; /* Fondo oscuro para el contenido */
+    padding: 20px;
+  }
+  
+  ion-grid {
+    border-radius: 12px; /* Bordes redondeados */
+    overflow: hidden; /* Asegura que los bordes redondeados se apliquen correctamente */
+    background-color: #1c1c1c; /* Fondo oscuro para la tabla */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra suave alrededor de la tabla */
+    margin-top: 20px; /* Espaciado superior */
+  }
+  
+  ion-row {
+    &:nth-child(odd) {
+      background-color: #2a2a2a; /* Fila alternada con fondo más oscuro */
+    }
+  
+    &:nth-child(even) {
+      background-color: #333333; /* Fila alternada más clara */
+    }
+  
+    &:hover {
+      background-color: #444444; /* Efecto hover para resaltar las filas */
+    }
+  }
+  
+  ion-col {
+    padding: 15px; /* Espaciado interno de las celdas */
+    text-align: center; /* Alineación centrada */
+    font-size: 1rem; /* Tamaño de fuente para los datos */
+  }
+  
+  ion-row {
+    border-bottom: 1px solid #444444; /* Borde gris oscuro entre filas */
+    
+    &:last-child {
+      border-bottom: none; /* Eliminar borde de la última fila */
+    }
+  }
+  
+  ion-col strong {
+    font-weight: bold;
+    color: #76c7c0; /* Color brillante para los encabezados de columnas */
+  }
+  
+  ion-item {
+    margin-top: 20px;
+  }
+  
+  ion-button {
+    --background: #76c7c0; /* Color del botón */
+    --color: white; /* Color del texto del botón */
+    --border-radius: 8px; /* Bordes redondeados */
+    margin-top: 20px; /* Espaciado superior */
+  }
+  
+  ion-button:hover {
+    --background: #5a9a99; /* Efecto hover para el botón */
+  }
+
+  
+  
