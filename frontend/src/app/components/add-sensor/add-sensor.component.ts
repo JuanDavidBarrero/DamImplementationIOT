@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AlertController } from '@ionic/angular';  
-import { DeviceService } from 'src/app/services/device.service';
-import {  PostData } from 'src/app/interfaces/devices'; 
+// import {  PostData } from 'src/app/interfaces/devices'; 
+import {  EventEmitter, Output } from '@angular/core';
 
 
 @Component({
@@ -14,33 +14,21 @@ export class AddSensorComponent implements OnInit {
   name: string = '';
   selectedZone: string = '';
 
-  constructor(private alertController: AlertController, private deviceService: DeviceService ) { }  
+  constructor(private alertController: AlertController ) { }  
 
   ngOnInit() {}
 
-  async onSubmit() {
+  @Output() dataSubmitted: EventEmitter<{ name: string; selectedZone: string }> = new EventEmitter();
+
+  onSubmit() {
     if (this.name && this.selectedZone) {
-      console.log('Nombre:', this.name);
-      console.log('Zona seleccionada:', this.selectedZone);
-
-      const newDevice: PostData = {
-        deviceName: this.name,
-        location: this.selectedZone
-      };
-
-      try {
-         await this.deviceService.createDevice(newDevice);
-      } catch (error) {
-        console.log("error in the http response");
-        
-      }
-
-
-    } else {
-      
+      this.dataSubmitted.emit({ name: this.name, selectedZone: this.selectedZone });
+    }
+    else{
       this.showAlert('Formulario inválido: Nombre o Zona vacíos');
     }
   }
+
 
   
   async showAlert(message: string) {

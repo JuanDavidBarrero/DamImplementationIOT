@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NavController } from '@ionic/angular';
 import { DeviceService } from 'src/app/services/device.service';
-import { Device } from 'src/app/interfaces/devices'; 
+import { Device, PostData } from 'src/app/interfaces/devices'; 
 
 @Component({
   selector: 'app-home',
@@ -27,6 +27,27 @@ export class HomePage implements OnInit {
     } catch (error) {
       console.error('Error al cargar los dispositivos:', error);
     }
+  }
+
+  async handleSensorData(event: { name: string, selectedZone: string }) {
+    console.log('Datos recibidos del sensor:', event);
+
+    if (event.name && event.selectedZone) {
+  
+      const newDevice: PostData = {
+        deviceName: event.name,
+        location: event.selectedZone
+      };
+
+      try {
+         await this.deviceService.createDevice(newDevice);
+         this.loadDevices();
+      } catch (error) {
+        console.log("error in the http response");
+        
+      }
+    }
+
   }
 
   onDeviceCardClick(id: string) {

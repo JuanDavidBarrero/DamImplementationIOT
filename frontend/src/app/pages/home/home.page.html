@@ -20,7 +20,9 @@
   <ion-content [fullscreen]="true">
     <div class="content">
 
-      <app-add-sensor></app-add-sensor>
+      <app-add-sensor 
+      (dataSubmitted)="handleSensorData($event)">
+    </app-add-sensor>
   
       <div class="device-cards-grid">
         <app-device-card
