@@ -9,7 +9,7 @@ import { HomePageRoutingModule } from './home-routing.module';
 import { HomePage } from './home.page';
 import { DeviceCardComponent } from 'src/app/components/device-card/device-card.component';
 import {  AddSensorComponent } from 'src/app/components/add-sensor/add-sensor.component';
-import { HttpClientModule } from '@angular/common/http';
+import { DeviceService } from 'src/app/services/device.service';
 
 
 @NgModule({
@@ -18,8 +18,8 @@ import { HttpClientModule } from '@angular/common/http';
     FormsModule,
     IonicModule,
     HomePageRoutingModule,
-    HttpClientModule
   ],
-  declarations: [HomePage,DeviceCardComponent,AddSensorComponent]
+  declarations: [HomePage,DeviceCardComponent,AddSensorComponent],
+  providers: [DeviceService]  
 })
 export class HomePageModule {}

@@ -7,7 +7,9 @@ import { firstValueFrom } from 'rxjs';
   providedIn: 'root',
 })
 export class DeviceService {
-  private apiUrl = 'http://localhost:3000/api/devices'; // Cambia la URL según tu backend
+  private apiUrl = 'http://localhost:3000/api/devices';
+  // private apiUrl = 'http://backend_container:3000/api/devices';
+
 
   constructor(private http: HttpClient) {}
 

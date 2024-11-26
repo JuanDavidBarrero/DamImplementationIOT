@@ -1,7 +1,12 @@
 {
-  "name": "hello-world",
+  "name": "frontend",
   "integrations": {
     "capacitor": {}
   },
-  "type": "angular"
+  "proxies": [
+    {
+      "path": "/api",
+      "proxyUrl": "http://backend_container:3000"
+    }
+  ]
 }
