@@ -168,3 +168,39 @@ export const getDeviceData = async (req = request, res = response) => {
 };
 
 
+export const addMeasurement = async (req = request, res = response) => {
+    const { id } = req.params; 
+
+    
+    const randomData = Math.floor(Math.random() * 101);
+
+    let connection;
+    try {
+        
+        connection = await dbConnection();
+
+        
+        const [result] = await connection.execute(
+            `INSERT INTO measurements (data, device_id) VALUES (?, ?)`,
+            [randomData, id]
+        );
+
+        
+        return res.status(201).json({
+            message: 'Medición agregada correctamente.',
+            measurementId: result.insertId,
+            deviceId: id,
+            data: randomData
+        });
+    } catch (error) {
+        console.error('Error al agregar la medición:', error.message);
+        return res.status(500).json({ message: 'Error al agregar la medición.' });
+    } finally {
+        
+        if (connection) {
+            await connection.end();
+        }
+    }
+};
+
+

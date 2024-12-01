@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
-import { Device, DeviceResponse, PostData } from '../interfaces/devices';
+import { Device, DeviceResponse, MeasurementResponse, PostData } from '../interfaces/devices';
 import { firstValueFrom } from 'rxjs';
 
 @Injectable({
@@ -58,4 +58,20 @@ export class DeviceService {
       return null;
     }
   }
+
+
+  async addMeasurement(id: number): Promise<MeasurementResponse | null> {
+    try {
+        const response = await firstValueFrom(this.http.put<MeasurementResponse>(
+            `${this.apiUrl}/${id}`,
+            {}
+        ));
+        return response;
+    } catch (error) {
+        console.error('Error al agregar la medición:', error);
+        return null;
+    }
+}
+
+  
 }

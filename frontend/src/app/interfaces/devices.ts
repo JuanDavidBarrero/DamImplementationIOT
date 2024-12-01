@@ -22,4 +22,10 @@ export interface Device {
     location: string;
   }
   
+  export interface MeasurementResponse {
+    message: string;
+    measurementId: number;
+    deviceId: string;
+    data: number;
+  }
   

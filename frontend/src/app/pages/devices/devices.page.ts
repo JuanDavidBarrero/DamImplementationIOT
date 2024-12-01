@@ -24,15 +24,25 @@ export class DevicesPage implements OnInit {
     private router: Router
   ) { }
 
+
   ngOnInit() {
     this.route.paramMap.subscribe(params => {
-      this.id = params.get('id');  
-
+      this.id = params.get('id');
+  
       if (this.id) {
-        
+
+
+    // Agregar medición
+    this.deviceService.addMeasurement(Number(this.id)).then(response => {
+      if (response) {
+      }
+    }).catch(error => {
+      console.error('Error al agregar la medición:', error);
+    });
+
+        // Obtener datos del dispositivo
         this.deviceService.getDeviceData(Number(this.id), true).then(response => {
           if (response && response.length > 0) {
-            
             const deviceData = response[0];
             this.deviceName = deviceData.name;
             this.date = new Date(deviceData.date);  
@@ -43,9 +53,12 @@ export class DevicesPage implements OnInit {
         }).catch(error => {
           console.error('Error al obtener los datos del dispositivo:', error);
         });
+  
+    
       }
     });
   }
+  
 
   showData() {
     if (this.id) {

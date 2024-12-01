@@ -7,6 +7,7 @@ import { DataPage } from './data.page';
 
 // Importa el servicio DeviceService
 import { DeviceService } from 'src/app/services/device.service';  // Asegúrate de que la ruta sea correcta
+import { DoorStatusPipe } from 'src/app/pipes/door-status.pipe';
 
 @NgModule({
   imports: [
@@ -15,7 +16,7 @@ import { DeviceService } from 'src/app/services/device.service';  // Asegúrate 
     IonicModule,
     DataPageRoutingModule
   ],
-  declarations: [DataPage],
+  declarations: [DataPage,DoorStatusPipe],
   providers: [DeviceService]  // Proporciona el servicio aquí
 })
 export class DataPageModule {}
